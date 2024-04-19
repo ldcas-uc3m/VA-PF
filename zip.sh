@@ -4,27 +4,22 @@
 
 set -e  # exit on error
 
-OUTFILE=../outfile.zip
+OUTFILE=../p1_arnaiz_casais.zip
 [ -e $OUTFILE ] && rm $OUTFILE  # remove if exists already
-
 
 # compile the report (and save it to root folder)
 echo "Compiling the report..."
 
-latexmk -cd -shell-escape -silent -pdf report/report.tex 
+latexmk -cd -shell-escape -pdf report/report.tex 
+
 cp report/report.pdf .
 
-
-cd src
-
-# <clean stuff up>
-
-cd ..
+cp results/output_test.csv .
 
 # zip it (excluding useless stuff)
 echo "Zipping..."
-zip -r $OUTFILE . -x zip.sh report/\* \*.git\* img/\* *__pycache__/\* .venv/\* build/\* .vscode/\*
+zip -r $OUTFILE . -x zip.sh report/\* \*.git\* img/\* data/\* .venv/\* README.md LICENSE requirements.txt results/\*
 
 # cleanup
 echo "Cleaning up..."
-rm report.pdf
+rm report.pdf output_test.csv

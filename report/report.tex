@@ -1,41 +1,43 @@
-\documentclass[12pt]{article}
+\documentclass[es]{uc3mreport}
 
-\addtolength{\oddsidemargin}{-.585in}
-\addtolength{\evensidemargin}{.585in}
-\addtolength{\topmargin}{-.585in}
-\addtolength{\textheight}{.760in}
-\addtolength{\textwidth}{1in}
 
-\usepackage[utf8]{inputenc}
-\usepackage[table]{xcolor}
-\usepackage{listings}
-\usepackage{float}
-\usepackage{graphicx}
-\usepackage{hyperref}
-\usepackage{markdown}
-% \usepackage{svg}
-% \usepackage[backend=biber, style=ieee, isbn=false,sortcites, maxbibnames=5, minbibnames=1]{biblatex}
+\usepackage{mymacros}
 
-\definecolor{azulUC3M}{RGB}{0,0,102}
 
-% \bibliography{bibliography}
+\graphicspath{ {./img/} }
+
+
+% config
+\author{
+  Leandro Andrada Guio -- 100451162\\
+  Ignacio Arnaiz Tierraseca -- 100428997\\
+  Luis Daniel Casais Mezquida -- 100429021\\
+  Daniel Obreo Sanz -- 100451058
+}
+\degree{Bachelor's degree in Computer Science and Engineering}
+\subject{Visión Artificial}
+\year{2023-2024}  % academic year
+\shortauthor{%
+  \abbreviateauthor{Leandro}{Andrada Guio}, %
+  \abbreviateauthor{Ignacio}{Arnaiz Tierraseca}, %
+  \abbreviateauthor{Luis Daniel}{Casais Mezquida}, %
+  y \abbreviateauthor{Daniel}{Obreo Sanz}%
+}
+\lab{Práctica Final}
+\title{Detección de Objetos con Faster-RCNN}
+\proffesor{Fernando Díaz de María}
+
 
 \begin{document}
 
-\input{parts/0-cover.tex}
+  \makecover[old]
 
-% (optional) change name of table of contents
-\renewcommand*\contentsname{Table of contents}
-
-% table of contents
-% \tableofcontents
-% \newpage
-
-% Put here all the LaTeX files to include (in order)
-% \input{parts/main.tex}
-
-% Put here all the Markdown files to include (in order)
-% \markdownInput{parts/main.md}
+  % contents
+  \begin{report}
+    \import{parts/}{1-introduccion.tex}
+    \import{parts/}{2-desarrollo.tex}
+    \import{parts/}{3-conclusiones.tex}
+  \end{report}
 
 
 \end{document}

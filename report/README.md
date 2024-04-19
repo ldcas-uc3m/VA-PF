@@ -6,7 +6,6 @@ The report consists of a main file [`report.tex`](report.tex), which includes a 
 
 
 ## Compilation
-
 First you must install LaTeX.
 
 - For Linux, install `texlive-full`.
@@ -16,8 +15,6 @@ First you must install LaTeX.
     sudo tlmgr install latexmk
     ```
 
-As we'll use SVG files, you'll need to install [Inkscape](https://inkscape.org/). If you're in Windows, make sure to add the executable to your PATH (typically located in `C:\Program Files\Inkscape\bin\`).
-
 To compile the report, use the command:
 ```
 latexmk -cd -shell-escape -pdf report.tex
@@ -25,7 +22,7 @@ latexmk -cd -shell-escape -pdf report.tex
 
 ## VsCode
 Some usefull extensions:
+- [LaTeX](https://marketplace.visualstudio.com/items?itemName=mathematic.vscode-latex)
 - [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
-    - If you are using the extension, please set `-shell-escape` (see [LaTeX Workshop FAQ](https://github.com/James-Yu/LaTeX-Workshop/wiki/FAQ#how-to-pass--shell-escape-to-latexmk))
-- [LTeX](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex): Grammar checker.
-    - You can change the language through the `ltex.language` setting in VS Code settings.
+
+If you are using the extension, please set `-shell-escape` (see [LaTeX Workshop FAQ](https://github.com/James-Yu/LaTeX-Workshop/wiki/FAQ#how-to-pass--shell-escape-to-latexmk))
