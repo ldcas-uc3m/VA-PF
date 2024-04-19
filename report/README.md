@@ -20,6 +20,9 @@ To compile the report, use the command:
 latexmk -cd -shell-escape -pdf report.tex
 ```
 
+As we'll use SVG files, you'll need to install [Inkscape](https://inkscape.org/). If you're in Windows, make sure to add the executable to your PATH (typically located in `C:\Program Files\Inkscape\bin\`).
+
+
 ## VsCode
 Some usefull extensions:
 - [LaTeX](https://marketplace.visualstudio.com/items?itemName=mathematic.vscode-latex)
