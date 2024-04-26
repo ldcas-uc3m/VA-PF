@@ -44,3 +44,6 @@ This requires Python 3.11.
    - [`db2.zip`](https://drive.google.com/file/d/1a3a3lNpEFGTxMSCRN0uMMwH6_XBAPAXg/view?usp=drive_link)
 2. Set the execution enviroment to one with a GPU, for example `T4 GPU`.
 
+## Running on WSL2 CUDA
+Guide: https://docs.nvidia.com/cuda/wsl-user-guide/index.html
+
