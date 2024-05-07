@@ -1,3 +1,47 @@
 \section{Desarrollo}
 
 % \subimport{}{2.1-dataset.tex}
+
+\subsection{Influencia de los Umbrales en la Inferencia}
+
+Viendo la figura \ref{fig:objectness_TH_SCORE} del Objectness-RPN, a medida que se aumenta el TH\textunderscore SCORE aumenta la precisión y disminuye el recall. Esto se debe a que se está variando la sensibilidad del modelo en la detección de regiones. Mientras que en la figura \ref{fig:global_TH_SCORE}, podemos ver que se mantiene estable a lo largo de los diferentes valores de TH\textunderscore SCORE, esto se debe a que nuestro modelo clasifica bien y tiene unos valores de umbral altos.
+
+
+\begin{figure}[h]
+\centering
+\begin{minipage}[t]{.5\textwidth}
+  \centering
+  \resizebox{\linewidth}{!}{\includesvg{Objectness-RPN_th_score}}
+  \captionsetup{font=footnotesize}
+  \caption{Objectness-RPN TH\textunderscore SCORE}
+  \label{fig:objectness_TH_SCORE}
+\end{minipage}%
+\begin{minipage}[t]{.5\textwidth}
+  \centering
+  \resizebox{\linewidth}{!}{\includesvg{Global-Classification_th_score}}
+  \captionsetup{font=footnotesize}
+  \caption{Global Classification TH\textunderscore SCORE}
+  \label{fig:global_TH_SCORE}
+\end{minipage}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\begin{minipage}[t]{.5\textwidth}
+  \centering
+  \resizebox{\linewidth}{!}{\includesvg{Objectness-RPN_th_iou}}
+  \captionsetup{font=footnotesize}
+  \caption{Objectness-RPN TH\textunderscore IOU}
+  \label{fig:objectness_TH_IOU}
+\end{minipage}%
+\begin{minipage}[t]{.5\textwidth}
+  \centering
+  \resizebox{\linewidth}{!}{\includesvg{Global-Classification_th_iou}}
+  \captionsetup{font=footnotesize}
+  \caption{Global Classification TH\textunderscore IOU}
+  \label{fig:global_TH_IOU}
+\end{minipage}
+\end{figure}
+
+
