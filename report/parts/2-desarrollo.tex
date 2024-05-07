@@ -4,7 +4,7 @@
 
 \subsection{Influencia de los Umbrales en la Inferencia}
 
-Viendo la figura \ref{fig:objectness_TH_SCORE} del Objectness-RPN, a medida que se aumenta el TH\textunderscore SCORE aumenta la precisión y disminuye el recall. Esto se debe a que se está variando la sensibilidad del modelo en la detección de regiones. Mientras que en la figura \ref{fig:global_TH_SCORE}, podemos ver que se mantiene estable a lo largo de los diferentes valores de TH\textunderscore SCORE, esto se debe a que nuestro modelo clasifica bien y tiene unos valores de umbral altos.
+Viendo la figura \ref{fig:objectness_TH_SCORE} del Objectness-RPN, a medida que se aumenta el TH\textunderscore SCORE aumenta la precisión y disminuye el recall, esto se debe a que el modelo es más selectivo en la detección de regiones. Mientras que en la figura \ref{fig:global_TH_SCORE}, podemos ver que se mantiene estable, por lo tanto el clasificador no se ve afectado.
 
 
 \begin{figure}[h]
@@ -25,6 +25,7 @@ Viendo la figura \ref{fig:objectness_TH_SCORE} del Objectness-RPN, a medida que 
 \end{minipage}
 \end{figure}
 
+Como se puede observar en la figura \ref{fig:objectness_TH_IOU}, a medida que se aumenta el umbral para determinar si una región se considera correcta o no, se reducen todas las métricas, esto se debe a que es difícil para nuestro modelo detectar las regiones correctas. Mientras que para el clasificador en la figura \ref{fig:global_TH_IOU} podemos ver que se mantiene estable, por lo tanto el clasificador no se ve afectado.
 
 \begin{figure}[h]
 \centering
