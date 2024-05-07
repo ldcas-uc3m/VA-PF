@@ -66,3 +66,14 @@ Como se puede observar en la figura \ref{fig:objectness_TH_IOU}, a medida que se
     se podría probar a añadir anchors de menor tamaño, para captar las botellas o de 
     mayor tamaño, para captar mejor las mesas o los sofás.
 
+\subsection {RoI pooling y clasificación}
+
+
+
+    La matriz de confusión generada resulta de gran utilidad para comprobar si realmente el modelo esta siendo de capaz de clasificar correctamente los objetos de cada clase y poder comprobar cuales son aquellos que se confunden entre sí con mayor frecuencia.
+    
+    Para interpretar la matriz de confusión se tiene en cuenta que la diagonal principal representa los aciertos es decir los objetos que se han clasificado correctamente como su clase. En ella primeramente se observa que la clase botella no se ha confundido con las otras clases, mientras que entre las otra tres clases si que ha habido cierto grado de confusión entre ellas, especialmente entre sofá y silla.
+    
+    Esto se debe a que tanto sofá como mesa y silla comparten múltiples características al ser todos muebles, tener varias patas sobre las que apoyarse, superficie plana, tamaños similares y poder encontrarse en entornos similares como puede ser un comedor. Por otro lado la clase botella apenas comparte características con ellas al tratarse de objetos mayormente de otro material, plástico, tamaño por lo general bastante menor y carecer de elementos característicos comunes a las otras clases como las patas.
+    
+    A fin de mejorar la clasificación, podría ser interesante ya que se conocen que clases se confunden más, incluir más imágenes de entrenamiento que incluyan objetos de clase sofá y silla desde más ángulos o en mayor variedad de entornos.
