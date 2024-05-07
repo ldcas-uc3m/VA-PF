@@ -45,3 +45,23 @@ Viendo la figura \ref{fig:objectness_TH_SCORE} del Objectness-RPN, a medida que 
 \end{figure}
 
 
+\subsection{Anchors}
+
+    Analizando las salidas del modelo, y comparando los anchors empleados 
+    (su tamaño y relación de aspecto) con las bounding boxes de las imagenes proporcionadas, 
+    se puede observar que la distribución de las predicciones, con respecto a la relación de aspecto 
+    y el tamaño es bastante similar a la verdad objetiva.
+
+    Debido a los anchors empleados, los objetos que mejor se detectan suelen ser 
+    los que tienen bounding boxes con una relación de aspecto más cercana a uno. 
+    Por lo que las sillas, que tienen bounding boxes más ''cuadradas'', se predicen mejor con este modelo.
+
+    En cuanto al tamaño de los anchors, se predicen mejor los objetos más grandes, 
+    seguramente a que la reducción del tamaño de la imagen hace que se pierda algo de información.
+
+    Como conclusión de esta sección, se podría mejorar el modelo añadiendo 
+    anchors con una relación de aspecto algo superior (3:1, o 4:1) para captar 
+    los objetos en esa sección que no se están percibiendo. De igual manera, 
+    se podría probar a añadir anchors de menor tamaño, para captar las botellas o de 
+    mayor tamaño, para captar mejor las mesas o los sofás.
+
