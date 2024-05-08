@@ -21,4 +21,3 @@ zip -r $OUTFILE . -x zip.sh report/\* \*.git\* img/\* data/\* .venv/\* .vscode/\
 
 # cleanup
 echo "Cleaning up..."
-rm report.pdf output_test.csv
