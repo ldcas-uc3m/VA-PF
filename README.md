@@ -1,5 +1,5 @@
 # Práctica Final: Detección de Objetos con Faster-RCNN
-By Leandro Andrada Guio, Ignacio Arnaiz Tierraseca, Luis Daniel Casais Mezquida & Daniel Obreo Sanz
+By Leandro Andrada Guio, Ignacio Arnaiz Tierraseca, Luis Daniel Casais Mezquida & Daniel Obreo Sanz  
 Visión Artificial 23/24  
 Bachelor's Degree in Computer Science and Engineering  
 Universidad Carlos III de Madrid
