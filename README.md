@@ -33,6 +33,6 @@ This requires Python 3.11.
 - Use the [`ms-toolsai.jupyter`](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extension to open and execute [`notebook.ipynb`](notebook.ipynb).
 
 
-## Running on WSL2 CUDA
+### Running on WSL2 CUDA
 Guide: https://docs.nvidia.com/cuda/wsl-user-guide/index.html
 
