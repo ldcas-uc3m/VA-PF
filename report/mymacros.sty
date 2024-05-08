@@ -3,9 +3,29 @@
 % \drawiosvgfigure[width]{filename}{caption}
 % remember to disable Word Wrap and Formatted Text for all text (https://www.drawio.com/doc/faq/svg-export-text-problems#disable-formatted-text-and-word-wrap)
 \newcommand{\drawiosvgfigure}[3][0.7] {
-  \begin{figure}[H]
+  \begin{figure}[h]
     \centering
     \includesvg[inkscapelatex=false,width=#1\textwidth]{#2.drawio.svg}
+    \caption{#3}
+    \label{fig:#2}
+  \end{figure}
+}
+
+% \pngfigure[width]{filename}{caption}
+\newcommand{\pngfigure}[3][0.7] {
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=#1\textwidth]{#2}
+    \caption{#3}
+    \label{fig:#2}
+  \end{figure}
+}
+
+% \svgfigure[width]{filename}{caption}
+\newcommand{\svgfigure}[3][0.7] {
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=#1\textwidth]{#2}
     \caption{#3}
     \label{fig:#2}
   \end{figure}

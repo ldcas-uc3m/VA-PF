@@ -40,22 +40,26 @@ Como se puede observar en la figura \ref{fig:objectness_TH_IOU}, a medida que se
 
 
 \subsection{\textit{Anchors}}
-    Analizando las salidas del modelo, y comparando los \textit{anchors} empleados 
-    (su tamaño y relación de aspecto) con las \textit{bounding boxes} de las imágenes proporcionadas, 
-    se puede observar que la distribución de las predicciones, con respecto a la relación de aspecto 
-    y el tamaño es bastante similar a la verdad objetiva.
+    Analizando las salidas del modelo, y comparando los \textit{anchors} empleados
+    (su tamaño y relación de aspecto) con las \textit{bounding boxes} de las imágenes proporcionadas,
+    se puede observar que la distribución de las predicciones, con respecto a la relación de aspecto
+    y el tamaño es bastante similar a la verdad objetiva (Figura \ref{fig:ratio_v_box}).
 
-    Debido a los \textit{anchors} empleados, los objetos que mejor se detectan suelen ser 
-    los que tienen \textit{bounding boxes} con una relación de aspecto más cercana a uno. 
+    \pngfigure[0.9]{ratio_v_box}{Relación entre la relación de aspecto y las bounding boxes}
+
+    Debido a los \textit{anchors} empleados, los objetos que mejor se detectan suelen ser
+    los que tienen \textit{bounding boxes} con una relación de aspecto más cercana a uno (Figura \ref{fig:ratio_v_anchors}).
     Por lo que las sillas, que tienen \textit{bounding boxes} más `cuadradas', se predicen mejor con este modelo.
 
-    En cuanto al tamaño de los \textit{anchors}, se predicen mejor los objetos más grandes, 
+    \pngfigure[0.9]{ratio_v_anchors}{Relación entre la relación de aspecto y los anchors}
+
+    En cuanto al tamaño de los \textit{anchors}, se predicen mejor los objetos más grandes,
     seguramente a que la reducción del tamaño de la imagen hace que se pierda algo de información.
 
-    Como conclusión de esta sección, se podría mejorar el modelo añadiendo 
-    \textit{anchors} con una relación de aspecto algo superior (3:1, o 4:1) para captar 
-    los objetos en esa sección que no se están percibiendo. De igual manera, 
-    se podría probar a añadir \textit{anchors} de menor tamaño, para captar las botellas o de 
+    Como conclusión de esta sección, se podría mejorar el modelo añadiendo
+    \textit{anchors} con una relación de aspecto algo superior (3:1, o 4:1) para captar
+    los objetos en esa sección que no se están percibiendo. De igual manera,
+    se podría probar a añadir \textit{anchors} de menor tamaño, para captar las botellas o de
     mayor tamaño, para captar mejor las mesas o los sofás.
 
 
@@ -65,7 +69,9 @@ Como se puede observar en la figura \ref{fig:objectness_TH_IOU}, a medida que se
 
     Por ejemplo, en el caso de una objeto `botella' y otro `silla', será factible clasificarlos teniendo únicamente en cuenta la RoI, ya que en el caso de la botella la actividad se concentrará en forma horizontal en el centro de la región, mientras que la silla mostrará mayor activación en las zonas cercanas a los bordes donde generalmente se encontrarán las patas y respaldo.
 
-    La matriz de confusión generada resulta de gran utilidad para comprobar si realmente el modelo está siendo de capaz de clasificar correctamente los objetos de cada clase y poder comprobar cuáles son aquellos que se confunden entre sí con mayor frecuencia.
+    La matriz de confusión generada (Figura \ref{fig:dconf}) resulta de gran utilidad para comprobar si realmente el modelo está siendo de capaz de clasificar correctamente los objetos de cada clase y poder comprobar cuáles son aquellos que se confunden entre sí con mayor frecuencia.
+
+    \pngfigure{dconf}{Matriz de confusión}
 
     Para interpretar la matriz de confusión se tiene en cuenta que la diagonal principal representa los aciertos es decir los objetos que se han clasificado correctamente como su clase. En ella primeramente se observa que la clase botella no se ha confundido con las otras clases, mientras que entre las otras tres clases sí que ha habido cierto grado de confusión entre ellas, especialmente entre `sofá' y `silla'.
 
@@ -74,3 +80,6 @@ Como se puede observar en la figura \ref{fig:objectness_TH_IOU}, a medida que se
     A fin de mejorar la clasificación, podría ser interesante, ya que se conocen que clases se confunden más, incluir más imágenes de entrenamiento que incluyan objetos de clase `sofá' y `silla' desde más ángulos o en mayor variedad de entornos.
 
 
+
+\subsection{Análisis de las funciones de pérdida}
+Para analizar las funciones de pérdida, 
