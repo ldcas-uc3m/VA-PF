@@ -1,2 +1,6 @@
 \section{Introducción}
+En ésta práctica se busca diseñar y entrenar una red neuronal convolucional de proposición de regiones (RCNN), basada en el modelo Faster-RCNN\footnote{L.-C. Chen, G Papandreou, F. Schroff and H. Adam, \textit{Rethinking Atrous Convolution for Semantic Image Segmentation}, 2017. arXiv: \href{https://arxiv.org/abs/1706.05587}{\texttt{1706.05587 [cs.CV]}}}, y usando la base de datos de PASCAL VOC 2012\footurl{http://host.robots.ox.ac.uk/pascal/VOC/voc2012} para detección de objetos.
 
+Los objetos a detectar son botellas, sillas, mesas, y sofás, lo que, añadiendo el fondo, nos da un total de 5 clases. El entrenamiento de la red se hizo con 12 \textit{epochs}, un \textit{step size} de 4, y un \textit{learning rate} de 0.001, con \textit{batch size} de 1.
+
+Como medida de evaluación se usó el \textit{F1 score}, el cual tiene en cuenta tanto la precisión como el \textit{recall} del modelo.
