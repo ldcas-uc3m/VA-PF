@@ -359,7 +359,7 @@
 		\clearpage
 		\pagestyle{fancy}
 	}
-	{\newpage}  % end definition
+	{\clearpage}  % end definition
 
 
 
