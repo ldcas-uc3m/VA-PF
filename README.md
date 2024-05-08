@@ -1,13 +1,8 @@
-# Lab: Name
+# Práctica Final: Detección de Objetos con Faster-RCNN
 By Leandro Andrada Guio, Ignacio Arnaiz Tierraseca, Luis Daniel Casais Mezquida & Daniel Obreo Sanz
 Visión Artificial 23/24  
 Bachelor's Degree in Computer Science and Engineering  
 Universidad Carlos III de Madrid
-
-
-## Project statement
-
-
 
 
 ## Installation and execution
@@ -37,12 +32,6 @@ This requires Python 3.11.
 ### Running on VsCode
 - Use the [`ms-toolsai.jupyter`](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extension to open and execute [`notebook.ipynb`](notebook.ipynb).
 
-
-## Running on [Google Collab](https://colab.research.google.com/)
-1. Download the data to the `data` folder:
-   - [`db1.zip`](https://drive.google.com/file/d/1en19SOHlipCUgWRkJIGgiYcRl-zpCeDp/view?usp=sharing)
-   - [`db2.zip`](https://drive.google.com/file/d/1a3a3lNpEFGTxMSCRN0uMMwH6_XBAPAXg/view?usp=drive_link)
-2. Set the execution enviroment to one with a GPU, for example `T4 GPU`.
 
 ## Running on WSL2 CUDA
 Guide: https://docs.nvidia.com/cuda/wsl-user-guide/index.html

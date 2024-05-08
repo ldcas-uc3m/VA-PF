@@ -60,21 +60,21 @@
 %----------
 
 \if@langes@pp  % spanish
-	\RequirePackage[spanish, es-tabla]{babel}
-	\RequirePackage[babel, spanish=spanish]{csquotes}
+	\RequirePackage[spanish,es-tabla,es-noindentfirst]{babel}
+	\RequirePackage[babel,spanish=spanish]{csquotes}
 	\selectlanguage{spanish}
 
 	\def\of{de}
-	\def\proffesorname{Profesor}
+	\def\professorname{Profesor}
 \fi
 
 \if@langen@pp  % english
 	\RequirePackage[english]{babel}
-	\RequirePackage[babel, english=american]{csquotes}
+	\RequirePackage[babel,english=american]{csquotes}
 	\selectlanguage{english}
 
 	\def\of{of}
-	\def\proffesorname{Professor}
+	\def\professorname{Professor}
 \fi
 
 
@@ -90,10 +90,10 @@
 	\newcommand{\degree}[1]{\gdef\@degree{#1}}
 	\newcommand{\subject}[1]{\gdef\@subject{#1}}
 	\renewcommand{\year}[1]{\gdef\@year{#1}}  % academic year
-	\newcommand{\shortauthor}[1]{\gdef\@shortauthor{#1}}  % teamname, or several authors names
 	\newcommand{\lab}[1]{\gdef\@lab{#1}}  % Lab 1, Exercise 3, etc.
-	\newcommand{\proffesor}[1]{\gdef\@proffesor{#1}}
-
+	\newcommand{\professor}[1]{\gdef\@professor{#1}}
+	\newcommand{\shortauthor}[1]{\gdef\@shortauthor{#1}}  % teamname, or several authors names (optional)
+	\newcommand{\shorttitle}[1]{\gdef\@shorttitle{#1}}  % short title (optional)
 \makeatother
 
 
@@ -214,21 +214,23 @@
 		% header
 		\fancyhf{}
 		\renewcommand{\headrulewidth}{0.4pt}
-		\lhead{
+		\fancyhead[L]{
 			\color{azulUC3M}
-			\@subject\ \@year
+			\ifdef{\@shorttitle}
+				{\@shorttitle}
+				{\@lab:~\@title}
 		}
-		\rhead{
+		\fancyhead[R]{
 			\color{azulUC3M}
-			\@title
+			\@subject~\@year
 		}
 		% footer
 		\renewcommand{\footrulewidth}{0.4pt}
-		\lfoot{
+		\fancyfoot[L]{
 			\color{azulUC3M}
-			\ifdef{\@shortauthor}{\@shortauthor}{}
+			\ifdef{\@shortauthor}{\@shortauthor}{\@author}
 		}
-		\rfoot{
+		\fancyfoot[R]{
 			\hypersetup{hidelinks}
 			\color{azulUC3M}
 			pg. \thepage\ \of\ \pageref{LastPage}
@@ -239,9 +241,39 @@
 		\fancyhf{}  % Clear header/footer
 		\renewcommand{\headrulewidth}{0pt}  % No header rule
 		\renewcommand{\footrulewidth}{0pt}  % No header rule
-		\cfoot{\color{azulUC3M}\thepage}
+		\fancyfoot[C]{\color{azulUC3M}\thepage}
 	}
 \makeatother
+
+
+
+%----------
+% TABLES
+%----------
+
+\RequirePackage{multirow}  % combine cells
+\RequirePackage{caption}  % customize the title of tables and figures
+\RequirePackage{tablefootnote}  % allow footnotes from text in tables (\tablefootnote)
+\RequirePackage{threeparttable}  % fancier tables (with tablenotes)
+\RequirePackage{booktabs}  % \toprule, \bottomrule
+\RequirePackage{array}
+
+% new type of column for tables: custom width and centered content
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+
+% Table layout for engineering
+\captionsetup*[table]{
+	format=hang,
+	justification=centering,
+	singlelinecheck=off,
+	labelsep=colon,
+	width=.75\linewidth,
+	font=small,
+	labelfont={bf,color=azulUC3M},
+	textfont=it
+}
 
 
 
@@ -250,21 +282,23 @@
 %----------
 
 \RequirePackage{graphicx}
+\RequirePackage{adjustbox}  % a better \resizebox: \begin{adjustbox}{max width=\textwidth} \end{adjustbox}
 \RequirePackage{float}
-\RequirePackage{svg}
-
+\RequirePackage{svg}  % SVG images support (requires inkscape)
+\RequirePackage{subcaption}  % \begin{subfigure}, etc.
 
 % Figures layout for engineering
-% \captionsetup[figure]{
-% 	format=hang,
-% 	name=Fig.,
-% 	singlelinecheck=off,
-% 	labelsep=period,
-% 	labelfont=bf,
-% 	font=small
-% }
-
-
+\captionsetup[figure]{
+	format=hang,
+	name=Fig.,
+	justification=centering,
+	singlelinecheck=off,
+	labelsep=colon,
+	width=.75\linewidth,
+	font=small,
+	labelfont={bf,color=azulUC3M},
+	textfont=it
+}
 
 %----------
 % MATH
@@ -378,10 +412,10 @@
 				\vfill
 				%
 				% professor
-				\ifdef{\@proffesor}{
+				\ifdef{\@professor}{
 					\begin{Large}
-						\textsl{\proffesorname:}\\
-						\@proffesor\\
+						\textsl{\professorname:}\\
+						\@professor\\
 					\end{Large}
 				}
 				{}
