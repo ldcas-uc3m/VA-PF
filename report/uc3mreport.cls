@@ -53,6 +53,10 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{mathptmx}  % times new roman
 
+% blue footnote line
+\preto{\footnoterule}{\color{azulUC3M}}
+\appto{\footnoterule}{\color{black}}
+
 
 
 %----------

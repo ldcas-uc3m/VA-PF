@@ -1,10 +1,17 @@
 \documentclass[es]{uc3mreport}
 
+\usepackage{multido}
+\usepackage{ifthen}
 
 \usepackage{mymacros}
-\usepackage{caption}
+
 
 \graphicspath{ {./img/} }
+
+
+% silence ht warnings
+\usepackage{silence}
+\WarningFilter{latex}{`h' float specifier changed to `ht'}
 
 
 % config
@@ -36,7 +43,6 @@
   \begin{report}
     \import{parts/}{1-introduccion.tex}
     \import{parts/}{2-desarrollo.tex}
-    \import{parts/}{3-conclusiones.tex}
   \end{report}
 
 
