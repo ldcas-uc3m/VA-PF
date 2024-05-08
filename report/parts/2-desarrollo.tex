@@ -99,9 +99,9 @@ Como se puede observar en la Figura \ref{fig:objectness_TH_IOU}, a medida que se
 
 
 \subsection {\textit{RoI pooling} y clasificación}
-    La técnica de \textit{RoI pooling} resulta de gran eficacia a la hora de clasificar y detectar objetos pues busca normalizar el tamaño de las regiones en las que pondrá atención el modelo para que sean uniformes. Es posible extraer la clase de un objeto a partir de la RoI si se trata de objetos que no sean muy similares en cuanto a forma, ya que será posible detectar variaciones en la activación del mapa, pero si se trata de objetos similares en forma aumenta el riesgo de confusión.
+    La técnica de \textit{RoI pooling} resulta de gran eficacia a la hora de clasificar y detectar objetos pues busca normalizar el tamaño de las regiones en las que pondrá atención el modelo para que sean uniformes y evitar que la diferencia de tamaño pueda distorsionar los resultados. Es posible extraer la clase de un objeto a partir de la RoI si se trata de objetos que no sean muy similares en cuanto a forma, ya que será posible detectar variaciones en la activación del mapa, pero si se trata de objetos similares en forma aumenta el riesgo de confusión.
 
-    Por ejemplo, en el caso de una objeto `botella' y otro `silla', será factible clasificarlos teniendo únicamente en cuenta la RoI, ya que en el caso de la botella la actividad se concentrará en forma horizontal en el centro de la región, mientras que la silla mostrará mayor activación en las zonas cercanas a los bordes donde generalmente se encontrarán las patas y respaldo.
+    Por ejemplo, en el caso de una objeto `botella' y otro `silla', será factible clasificarlos teniendo únicamente en cuenta la RoI, ya que en el caso de la botella la actividad se concentrará en forma vertical en el centro de la región, mientras que la silla mostrará mayor activación en las zonas cercanas a los bordes donde generalmente se encontrarán las patas y respaldo.
 
     La matriz de confusión generada (Figura \ref{fig:dconf}) resulta de gran utilidad para comprobar si realmente el modelo está siendo de capaz de clasificar correctamente los objetos de cada clase y poder comprobar cuáles son aquellos que se confunden entre sí con mayor frecuencia.
 
